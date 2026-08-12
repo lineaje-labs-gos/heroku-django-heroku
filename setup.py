@@ -40,7 +40,6 @@ about = {}
 with open(os.path.join(here, 'django_heroku', '__version__.py')) as f:
     exec(f.read(), about)
 
-
 class UploadCommand(Command):
     """Support setup.py upload."""
 
@@ -73,9 +72,14 @@ class UploadCommand(Command):
 
         sys.exit()
 
-
 # Where the magic happens:
-setup(
+setup(project_urls={
+    'Homepage': 'https://github.com/lineaje-labs-gos/heroku-django-heroku',
+    'Repository': 'https://github.com/lineaje-labs-gos/heroku-django-heroku',
+    'Tracker': 'https://github.com/lineaje-labs-gos/heroku-django-heroku/issues',
+  }, 
+  maintainer_email="221268890+Lineaje-DepFixer@users.noreply.github.com", 
+  maintainer="Lineaje DepFixer", 
     name=NAME,
     version=about['__version__'],
     description=DESCRIPTION,
